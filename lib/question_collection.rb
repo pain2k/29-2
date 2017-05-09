@@ -1,6 +1,7 @@
 require "rexml/document"
 class QuestionCollection
   attr_reader :score
+
   def initialize(doc)
     @score = 0
     @questions = []
@@ -18,13 +19,22 @@ class QuestionCollection
       question.print
       question_time = Time.now.to_i
       user_choice = STDIN.gets.to_i
+      print ">"
       user_time = Time.now.to_i - question_time
-      if question.right?(user_choice) && question.timer?(user_time)
-        @score += 1
-        puts "Правильный ответ!"
-      else
-        puts "Неправильно. Правильный ответ: #{question.right_answer}"
+      case question.timer?(user_time)
+        when false
+          puts "К сожалению время вышло"
+          next
+        when true
+          if question.right?(user_choice)
+            @score += 1
+            puts "Правильный ответ!"
+          else
+            puts "Неправильно. Правильный ответ: #{question.right_answer}"
+          end
       end
+
     end
+
   end
 end
