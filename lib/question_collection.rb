@@ -18,8 +18,8 @@ class QuestionCollection
     @questions.each do |question|
       question.print
       question_time = Time.now.to_i
-      user_choice = STDIN.gets.to_i
       print ">"
+      user_choice = STDIN.gets.to_i
       user_time = Time.now.to_i - question_time
       case question.timer?(user_time)
         when false
