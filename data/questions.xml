@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<questions>
+  <question timer="1">
+    <text>Сколько байт в килобайте?</text>
+    <variants>
+      <variant>1000</variant>
+      <variant>2048</variant>
+      <variant right="true">1024</variant>
+      <variant>512</variant>
+    </variants>
+  </question>
+  <question timer="1">
+    <text>Сколько дней в неделе?</text>
+    <variants>
+      <variant>2</variant>
+      <variant>12</variant>
+      <variant right="true">7</variant>
+      <variant>5</variant>
+    </variants>
+  </question>
+  <question timer="1">
+    <text>Сколько секунд в минуте?</text>
+    <variants>
+      <variant>40</variant>
+      <variant right="true">60</variant>
+      <variant>102</variant>
+      <variant>51</variant>
+    </variants>
+  </question>
+  <question timer="1">
+    <text>Сколько дней в январе?</text>
+    <variants>
+      <variant right="true">31</variant>
+      <variant>29</variant>
+      <variant>27</variant>
+      <variant>12</variant>
+    </variants>
+  </question>
+</questions>
