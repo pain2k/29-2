@@ -12,7 +12,7 @@ class Question
   end
 
   def print
-    puts "#{@text}"
+    puts @text
     @answers.shuffle!.each_with_index { |answer, index| puts "#{index + 1}. #{answer}" }
   end
 
