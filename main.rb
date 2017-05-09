@@ -7,17 +7,16 @@ if Gem.win_platform?
   end
 end
 
-require_relative 'lib/test'
+require_relative 'lib/result_printer'
 require_relative 'lib/question_reader'
 require_relative 'lib/question'
 require_relative 'lib/question_collection'
 
 reader = QuestionReader.new(File.dirname(__FILE__))
-
 test = QuestionCollection.new(reader.doc)
 
-while test.status == 0
-  test.next_question
-  test.ask_answer
+test.ask_questions
 
-end
+result = ResultPrinter.new(test.score,test.questions_size)
+result.print
+
