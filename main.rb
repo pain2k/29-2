@@ -13,10 +13,9 @@ require_relative 'lib/question'
 require_relative 'lib/question_collection'
 
 reader = QuestionReader.new(File.dirname(__FILE__))
-test = QuestionCollection.new(reader.doc)
+test = QuestionCollection.new(reader.questions)
 
 test.ask_questions
 
 result = ResultPrinter.new(test.score,test.questions_size)
 result.print
-

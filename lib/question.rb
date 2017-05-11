@@ -8,7 +8,6 @@ class Question
       @answers << item.text
       @right_answer = item.text if item.attributes["right"] == "true"
     end
-
   end
 
   def print
@@ -17,10 +16,10 @@ class Question
   end
 
   def right?(user_input)
-    return @answers[user_input - 1] == @right_answer
+    @answers[user_input - 1] == @right_answer
   end
 
   def timer?(user_time)
-    return user_time <= @timer
+    user_time <= @timer
   end
 end
