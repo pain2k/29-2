@@ -1,4 +1,3 @@
-require "rexml/document"
 class QuestionCollection
   attr_reader :score
 
